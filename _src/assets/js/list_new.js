@@ -5,6 +5,8 @@ const newList = document.querySelector('#app-list');
 const board = document.querySelector('#app-article');
 const modal = document.querySelector('.modal-content');
 const card = document.querySelector('.app-card');
+const cardDel = document.querySelector('.p-1');
+const deleteElem = document.querySelector('.deleteList');
 
 let listArray = [newList];
 
@@ -27,6 +29,7 @@ function addNewList () {
    // let descripText = newList.querySelector('.app-edit-textarea');
    // descripText = 'hola';
 
+
    function createCard () {
       const listClon = newElem.querySelector('.p-1');
       const card = newElem.querySelector('.js-card');
@@ -43,7 +46,11 @@ function addNewList () {
    newElem.querySelectorAll('#add-btn').forEach(btn => {
       btn.addEventListener('click', createCard)
    }) 
+  
+
+  
 }
+
 
 const toggleEdit = ev => {
    ev.stopPropagation();
@@ -59,4 +66,5 @@ const preventEditClosing = ev => {
 
 newListBtn.addEventListener('click', addNewList);
 document.querySelector('.js-edit-modal').addEventListener('click', preventEditClosing);
+
 
